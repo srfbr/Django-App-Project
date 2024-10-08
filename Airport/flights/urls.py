@@ -1,8 +1,15 @@
 from django.urls import path
-from .api import views
+from .api.views import FlightViewSet, AirplaneViewSet, AirportViewSet
+from rest_framework.routers import DefaultRouter
 
-urlpatterns = [
-    path('flights_manager/', views.flights_manager, name='flights_manager'),
-    path('airplanes_manager/', views.airplanes_manager, name='airplanes_manager'),
-    path('airports_manager/', views.airports_manager, name='airports_manager')
-]
+router = DefaultRouter()
+router.register(r'flights_manager', FlightViewSet)
+app_name = 'flights_manager'
+
+router.register(r'airplanes_manager', AirplaneViewSet)
+app_name = 'airplanes_manager'
+
+router.register(r'airports_manager', AirportViewSet)
+app_name = 'airports_manager'
+
+urlpatterns = [] + router.urls
