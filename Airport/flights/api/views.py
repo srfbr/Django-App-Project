@@ -29,3 +29,5 @@ class AirportViewSet(viewsets.ModelViewSet):
     serializer_class = AirportSerializer
     filter_backends = [filters.SearchFilter]
     search_fields = ['name']
+
+    

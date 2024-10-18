@@ -11,6 +11,4 @@ router.register(r'booking_manager', BookingViewSet)
 app_name = 'booking_manager'
 
 
-urlpatterns = [
-    
-] + router.urls
+urlpatterns = [] + router.urls
